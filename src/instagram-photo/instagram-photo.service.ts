@@ -44,7 +44,7 @@ export class InstagramPhotoService {
   }
 
   async findAll(): Promise<InstagramPhoto[]> {
-    return this.instagramPhotoModel.find().exec();
+    return this.instagramPhotoModel.find().sort({ createdAt: -1 }).exec();
   }
 
   async findById(id: string): Promise<InstagramPhoto | null> {
